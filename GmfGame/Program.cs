@@ -28,6 +28,8 @@ namespace GmfGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Encored.Instance.Start();
+
             MainForm form = new MainForm();
             form.ClientSize = new Size(GameCore.Constant.WIDTH, GameCore.Constant.HEIGHT);
             form.Show();

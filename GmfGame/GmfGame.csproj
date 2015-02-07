@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encored.cs" />
     <Compile Include="External\fmod.cs" />
     <Compile Include="External\fmod_dsp.cs" />
     <Compile Include="External\fmod_errors.cs" />
