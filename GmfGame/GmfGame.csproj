@@ -52,6 +52,8 @@
     <Compile Include="External\fmod_memoryinfo.cs" />
     <Compile Include="GameCore\Bird.cs" />
     <Compile Include="GameCore\Constant.cs" />
+    <Compile Include="GameCore\Map.cs" />
+    <Compile Include="GameCore\Wall.cs" />
     <Compile Include="GameCore\World.cs" />
     <Compile Include="GmfImage.cs" />
     <Compile Include="GmfKey.cs" />

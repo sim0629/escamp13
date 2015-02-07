@@ -15,7 +15,9 @@ namespace GmfGame
         private const float updateInterval = 0.03f;
 
         private float totalElapsedSeconds = 0f;
-        private GameCore.World world = new GameCore.World();
+        private GameCore.World world;
+
+        private bool isPlaying = false;
 
         public MainForm()
         {
@@ -26,10 +28,23 @@ namespace GmfGame
         // elapsedSeconds : 전 프레임에서 지난 시간
         public void UpdateWorld(float elapsedSeconds)
         {
+            if (!isPlaying)
+            {
+                if (GmfKey.IsKeyPressed(Keys.Enter))
+                {
+                    isPlaying = true;
+                    world = new GameCore.World();
+                }
+                else
+                {
+                    return;
+                }
+            }
+
             if ((int)(totalElapsedSeconds / updateInterval)
                 != (int)((totalElapsedSeconds + elapsedSeconds) / updateInterval))
             {
-                world.Update();
+                isPlaying = world.Update();
             }
             totalElapsedSeconds += elapsedSeconds;
         }
@@ -39,7 +54,7 @@ namespace GmfGame
             Graphics g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             g.Clear(Color.White);
-            world.Draw(g);
+            if (world != null) world.Draw(g);
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
