@@ -11,7 +11,7 @@ namespace GmfGame.GameCore
     {
         private SizeF size = new SizeF(GameCore.Constant.WIDTH, GameCore.Constant.HEIGHT);
         private Bird bird;
-        private SizeF gravity;
+        //private SizeF gravity;
         private Map map;
 
         public Bird Bird { get { return bird; } }
@@ -19,17 +19,26 @@ namespace GmfGame.GameCore
         public World()
         {
             bird = new Bird(new PointF(size.Width * 0.1f, size.Height * 0.5f));
-            gravity = new SizeF(0f, 1f);
+            //gravity = new SizeF(0f, 0.5f);
             map = new Map();
+        }
+
+        private void ApplyPower()
+        {
+            if (Encored.Instance.IsOn)
+            {
+                bird.ApplyVelocity(new SizeF(0f, 2f));
+            }
+            else
+            {
+                bird.ApplyVelocity(new SizeF(0f, -2f));
+            }
         }
 
         public bool Update()
         {
-            if (GmfKey.IsKeyPressed(Keys.Space))
-            {
-                bird.ApplyForce(new SizeF(0f, -4f));
-            }
-            bird.ApplyForce(gravity);
+            ApplyPower();
+            //bird.ApplyForce(gravity);
             bird.Update();
             map.Update();
 

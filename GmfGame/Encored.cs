@@ -25,13 +25,13 @@ namespace GmfGame
         private long current_timestamp;
         private long current_power;
 
-        public long Power
+        public bool IsOn
         {
             get
             {
                 lock (lock_obj)
                 {
-                    return current_power;
+                    return current_power > 250000;
                 }
             }
         }
@@ -70,6 +70,7 @@ namespace GmfGame
                     prev_power = current_power;
                     current_timestamp = timestamp;
                     current_power = power;
+                    Debug.WriteLine("prev: {0}, current: {1}", prev_power, current_power);
                 }
             }
         }

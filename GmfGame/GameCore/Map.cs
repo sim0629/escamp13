@@ -28,7 +28,7 @@ namespace GmfGame.GameCore
 
         public void Update()
         {
-            if (frame_count % 100 == 0)
+            if (frame_count % 1000 == 0)
             {
                 walls.Add(GenerateWall());
             }
@@ -38,7 +38,7 @@ namespace GmfGame.GameCore
 
             foreach (var wall in walls)
             {
-                wall.ApplyVelocity(-3f);
+                wall.ApplyVelocity(-1f);
                 wall.Update();
             }
         }

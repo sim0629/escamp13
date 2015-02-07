@@ -9,6 +9,6 @@ namespace GmfGame.GameCore
     {
         public const int WIDTH = 800;
 
-        public const int HEIGHT = 480;
+        public const int HEIGHT = 450;
     }
 }

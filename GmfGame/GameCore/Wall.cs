@@ -10,7 +10,7 @@ namespace GmfGame.GameCore
     {
         private float smaller_y, larger_y;
         private float x;
-        private float width = 20;
+        private float width = 40;
         private float v;
 
         public float X { get { return x; } }

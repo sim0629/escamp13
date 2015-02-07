@@ -8,7 +8,7 @@ namespace GmfGame.GameCore
 {
     public class Bird
     {
-        private SizeF size = new SizeF(60f, 60f);
+        private SizeF size = new SizeF(75f, 50f);
         private PointF position;
         private SizeF velocity;
 
@@ -25,6 +25,11 @@ namespace GmfGame.GameCore
         public void ApplyForce(SizeF force)
         {
             velocity += force;
+        }
+
+        public void ApplyVelocity(SizeF velocity)
+        {
+            this.velocity = velocity;
         }
 
         public void Update()
