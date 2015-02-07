@@ -11,6 +11,7 @@ namespace GmfGame.GameCore
         private int frame_count;
         private List<Wall> walls = new List<Wall>();
         private Random random = new Random();
+        private const float WALL_VELOCITY = 2f;
 
         public List<Wall> Walls { get { return walls; } }
 
@@ -20,7 +21,7 @@ namespace GmfGame.GameCore
 
         private Wall GenerateWall()
         {
-            var len = 0.3f;
+            var len = 0.5f;
             var pos = (float)random.NextDouble();
             pos = pos * (1f - len) + len / 2f;
             return new Wall(Constant.WIDTH, (pos - len / 2f) * Constant.HEIGHT, (pos + len / 2f) * Constant.HEIGHT);
@@ -28,7 +29,7 @@ namespace GmfGame.GameCore
 
         public void Update()
         {
-            if (frame_count % 1000 == 0)
+            if (frame_count % 100 == 0)
             {
                 walls.Add(GenerateWall());
             }
@@ -38,7 +39,7 @@ namespace GmfGame.GameCore
 
             foreach (var wall in walls)
             {
-                wall.ApplyVelocity(-1f);
+                wall.ApplyVelocity(-WALL_VELOCITY);
                 wall.Update();
             }
         }

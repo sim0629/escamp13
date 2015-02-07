@@ -27,11 +27,11 @@ namespace GmfGame.GameCore
         {
             if (Encored.Instance.IsOn)
             {
-                bird.ApplyVelocity(new SizeF(0f, 2f));
+                bird.ApplyVelocity(new SizeF(0f, -2f));
             }
             else
             {
-                bird.ApplyVelocity(new SizeF(0f, -2f));
+                bird.ApplyVelocity(new SizeF(0f, 2f));
             }
         }
 

@@ -79,14 +79,17 @@ namespace GmfGame
         {
             while (true)
             {
-                if (watch.ElapsedMilliseconds < 800)
+                try
                 {
-                    Thread.Sleep(1);
-                    continue;
-                }
-                watch.Restart();
+                    if (watch.ElapsedMilliseconds < 800)
+                    {
+                        Thread.Sleep(1);
+                        continue;
+                    }
+                    watch.Restart();
 
-                try { Request(); }
+                    Request();
+                }
                 catch { }
             }
         }
