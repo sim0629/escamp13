@@ -54,6 +54,7 @@ namespace GmfGame.GameCore
 
         public void Draw(Graphics g)
         {
+            g.DrawImage(GmfImage.background, 0, 0, GameCore.Constant.WIDTH, GameCore.Constant.HEIGHT);
             bird.Draw(g);
             map.Draw(g);
         }

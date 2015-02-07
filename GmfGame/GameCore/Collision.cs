@@ -10,7 +10,7 @@ namespace GmfGame.GameCore
         public static bool BirdAndWall(Bird bird, Wall wall)
         {
             if (bird.Position.X + bird.Size.Width / 2f < wall.X - wall.Width / 2f
-                || bird.Position.X - bird.Size.Width / 2f > wall.X + wall.Width / 2f)
+                || bird.Position.X - bird.Size.Width / 2f > wall.X)
                 return false;
 
             return bird.Position.Y < wall.Smaller_Y || bird.Position.Y > wall.Larger_Y;

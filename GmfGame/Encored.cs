@@ -31,7 +31,7 @@ namespace GmfGame
             {
                 lock (lock_obj)
                 {
-                    return current_power > 250000;
+                    return current_power > 1000;
                 }
             }
         }

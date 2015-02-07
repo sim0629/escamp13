@@ -38,8 +38,8 @@ namespace GmfGame.GameCore
         public void Draw(Graphics g)
         {
             var brush = Brushes.Black;
-            g.FillRectangle(brush, x - 0.5f * width, 0, width, smaller_y);
-            g.FillRectangle(brush, x - 0.5f * width, larger_y, width, Constant.HEIGHT);
+            g.DrawImage(GmfImage.wall_flip, x - 0.5f * width, 0, width, smaller_y);
+            g.DrawImage(GmfImage.wall, x - 0.5f * width, larger_y, width, Constant.HEIGHT - larger_y);
         }
     }
 }

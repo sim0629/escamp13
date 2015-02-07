@@ -8,6 +8,7 @@ namespace GmfGame.GameCore
 {
     public class Bird
     {
+        private SizeF size_img = new SizeF(85f, 90f);
         private SizeF size = new SizeF(75f, 50f);
         private PointF position;
         private SizeF velocity;
@@ -39,7 +40,7 @@ namespace GmfGame.GameCore
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(GmfImage.Get(0), position.X - 0.5f * size.Width, position.Y - 0.5f * size.Height, size.Width, size.Height);
+            g.DrawImage(GmfImage.bird, position.X - 0.5f * size_img.Width, position.Y - 0.5f * size_img.Height, size_img.Width, size_img.Height);
         }
     }
 }
