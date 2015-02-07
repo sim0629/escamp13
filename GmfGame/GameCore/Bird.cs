@@ -9,7 +9,7 @@ namespace GmfGame.GameCore
     public class Bird
     {
         private SizeF size_img = new SizeF(85f, 90f);
-        private SizeF size = new SizeF(75f, 50f);
+        private SizeF size = new SizeF(65f, 50f);
         private PointF position;
         private SizeF velocity;
 

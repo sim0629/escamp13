@@ -8,7 +8,8 @@ namespace GmfGame.GameCore
 {
     public class Map
     {
-        private int frame_count;
+        private long frames_per_wall = 150;
+        private long frame_count;
         private List<Wall> walls = new List<Wall>();
         private Random random = new Random();
         private const float WALL_VELOCITY = 2f;
@@ -29,7 +30,7 @@ namespace GmfGame.GameCore
 
         public void Update()
         {
-            if (frame_count % 100 == 0)
+            if (frame_count % (Math.Max(10, frames_per_wall - (10 * frame_count / 300))) == 0)
             {
                 walls.Add(GenerateWall());
             }
