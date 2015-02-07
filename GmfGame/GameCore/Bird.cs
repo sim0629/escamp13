@@ -12,6 +12,7 @@ namespace GmfGame.GameCore
         private PointF position;
         private SizeF velocity;
 
+        public SizeF Size { get { return size; } }
         public PointF Position { get { return position; } }
         public SizeF Velocity { get { return velocity; } }
 

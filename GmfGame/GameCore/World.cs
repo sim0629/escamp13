@@ -36,6 +36,10 @@ namespace GmfGame.GameCore
             if (bird.Position.Y < 0f || bird.Position.Y > size.Height)
                 return false;
 
+            foreach (var wall in map.Walls)
+                if (Collision.BirdAndWall(bird, wall))
+                    return false;
+
             return true;
         }
 

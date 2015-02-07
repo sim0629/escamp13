@@ -14,6 +14,9 @@ namespace GmfGame.GameCore
         private float v;
 
         public float X { get { return x; } }
+        public float Width { get { return width; } }
+        public float Smaller_Y { get { return smaller_y; } }
+        public float Larger_Y { get { return larger_y; } }
 
         public Wall(float x, float smaller_y, float larger_y)
         {

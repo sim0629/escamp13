@@ -12,6 +12,8 @@ namespace GmfGame.GameCore
         private List<Wall> walls = new List<Wall>();
         private Random random = new Random();
 
+        public List<Wall> Walls { get { return walls; } }
+
         public Map()
         {
         }
