@@ -17,7 +17,7 @@ namespace GmfGame
         private float totalElapsedSeconds = 0f;
         private GameCore.World world;
 
-        private bool isPlaying = false;
+        public static bool isPlaying = false;
 
         public MainForm()
         {

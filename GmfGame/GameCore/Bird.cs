@@ -40,7 +40,10 @@ namespace GmfGame.GameCore
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(GmfImage.bird, position.X - 0.5f * size_img.Width, position.Y - 0.5f * size_img.Height, size_img.Width, size_img.Height);
+            var img = GmfImage.die;
+            if (MainForm.isPlaying)
+                img = GmfImage.bird;
+            g.DrawImage(img, position.X - 0.5f * size_img.Width, position.Y - 0.5f * size_img.Height, size_img.Width, size_img.Height);
         }
     }
 }
